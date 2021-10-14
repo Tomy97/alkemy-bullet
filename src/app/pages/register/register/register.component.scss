@@ -1,0 +1,23 @@
+.container {
+  border-radius: 20px;
+  min-height: calc(100vh - 155px);
+  display: flex;
+  justify-content: center;
+  .card {
+    width: 30rem;
+    height: 30rem;
+  }
+  .logo-contain {
+    display: flex;
+    justify-content: center;
+    .logo-response {
+      width: 100px;
+      height: 120px;
+    }
+  }
+  .form-class {
+    display: grid;
+    grid-row: auto;
+    border-radius: 20px;
+  }
+}

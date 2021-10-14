@@ -1,0 +1,5 @@
+<button *ngIf="!isRaised" (click)="successAlert()" mat-button color="primary">Success Alert</button>
+
+<button *ngIf="isRaised" (click)="errorAlert()" mat-raised-button color="primary">Error Alert</button>
+
+<button *ngIf="isRaised" (click)="informationAlert()" mat-raised-button color="primary">infor Alert</button>

@@ -1,0 +1,53 @@
+<div class="background">
+  <form class="form" (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+    <img
+      src="../../../assets/img/logo-bankemy.svg"
+      alt="logo-bankemy"
+      class="logo"
+    />
+    <div class="form-values">
+      <p>
+        <mat-form-field appearance="legacy" class="field" color="accent">
+          <mat-label>Correo</mat-label>
+          <input
+            matInput
+            placeholder="Coloque aqui su correo"
+            formControlName="email"
+            class="input"
+            type="email"
+          />
+          <mat-error *ngIf="loginForm.get('email').hasError('required')"
+            >Se requiere el email</mat-error
+          >
+          <mat-error *ngIf="loginForm.get('email').hasError('email')"
+            >No es el formato correcto</mat-error
+          >
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="legacy" class="field" color="accent">
+          <mat-label>Contraseña</mat-label>
+          <input
+            matInput
+            placeholder="Coloque aqui su contraseña"
+            formControlName="password"
+            type="password"
+            class="input"
+          />
+          <mat-error *ngIf="loginForm.get('password').hasError('required')"
+            >Se requiere la contraseña</mat-error
+          >
+        </mat-form-field>
+      </p>
+    </div>
+    <button
+      mat-raised-button
+      color="accent"
+      type="submit"
+      [disabled]="!loginForm.valid"
+      class="button"
+    >
+      Login
+    </button>
+  </form>
+</div>

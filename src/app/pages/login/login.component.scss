@@ -1,0 +1,54 @@
+.background{
+    width: 100%;
+    min-height: calc(100vh - 155px);
+    background: linear-gradient(rgb(16, 144, 194) 50%, rgb(82, 182, 127) 50%);
+    display: flex;
+    .form{
+        margin: auto;
+        border: 1px solid black;
+        max-width: 500px;
+        padding: 2.5%;
+        -webkit-box-shadow: 0px 0px 30px 0px #000000; 
+        box-shadow: 0px 0px 30px 0px #000000;
+        align-self: center;
+        background-color: rgb(74, 71, 77);
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-rows: auto auto auto;
+
+    .logo {
+      grid-column: 1/2;
+      grid-row: 1/2;
+      width: 50%;
+    }
+
+    .form-values {
+      grid-column: 2/4;
+      grid-row: 2/3;
+      width: 100%;
+
+      .field {
+        width: 100%;
+      }
+    }
+    .button {
+      grid-column: 4/5;
+      grid-row: 3/4;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .form {
+    height: 50vh;
+    width: 80vw;
+    .logo {
+      width: 80%;
+    }
+    .button {
+      width: 60%;
+      height: 65%;
+    }
+  }
+}

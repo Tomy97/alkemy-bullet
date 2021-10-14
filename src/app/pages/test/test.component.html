@@ -1,0 +1,25 @@
+
+<div class="container-test">
+ 
+
+  <div class="body-test">
+    BODY
+    <hr>
+    <strong>Name:</strong> {{ model.name }}
+    <hr />
+    <strong>Description:</strong> {{ model.description }}
+    <hr>
+    <!-- Generic button -->
+    <app-button></app-button>
+    <app-button [isRaised]='true'></app-button>
+    <hr>    
+    <div>
+        <p class="alert alert-danger">Esto es una alerta en bootstrap 4</p>
+    </div>
+  </div>
+     
+
+</div> 
+
+<!-- descomentar para probar el listado de operaciones y comentar todo el div container
+<app-list-operations  [datos]="datos"   [titulo]="titulo"></app-list-operations>-->

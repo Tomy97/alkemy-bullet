@@ -1,0 +1,66 @@
+<form class="container-sm form" (ngSubmit)="onSubmit()" [formGroup]="Form">
+    <mat-form-field class="mb-3">
+      <label for="input-ingreso" class="form-label">{{tipo}}</label>
+      <input
+        matInput
+        type="number"
+        id="monto"
+        formControlName="monto"
+      />
+      <mat-error *ngIf="Form.get('monto').hasError('required')"
+        >Se requiere el monto</mat-error
+      >
+      <mat-error *ngIf="Form.get('monto').hasError('min')"
+        >Tiene que ser mayor a 0</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field>
+      <label for="concepto">Concepto</label>
+      <input
+        matInput
+        type="text"
+        name="concepto"
+        id="concepto"
+        formControlName="concepto"
+        maxlength="15"
+      />
+      <mat-error *ngIf="Form.get('concepto').hasError('required')"
+        >Se requiere el concepto</mat-error
+      >
+      <mat-error *ngIf="Form.get('concepto').hasError('maxLength')"
+        >Debe ser una oración corta</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field>
+      <label for="fecha">Fecha</label>
+      <input
+        matInput
+        type="date"
+        name="fecha"
+        id="fecha"
+        formControlName="fecha"
+      />
+      <mat-error *ngIf="Form.get('fecha').hasError('required')"
+        >Se requiere la fecha</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field>
+      <label for="moneda">Moneda</label>
+      <mat-select class="form-select" aria-label="Default select example" 
+      formControlName="moneda" >
+        <mat-option *ngFor="let moneda of Monedas" value="{{moneda}}">{{moneda}}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="Form.get('moneda').hasError('required')"
+        >Se requiere la moneda</mat-error>
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="accent"
+      [disabled]="!Form.valid"
+      class="button-form"
+      type="submit"
+    >
+      Registrar
+    </button>
+    <ng-template #buttonEgreso>Egresar</ng-template>
+  </form>
